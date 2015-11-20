@@ -15,12 +15,12 @@ class CalculatorTest(TestCase):
             self.assertEqual(Answ[i], self.calc.add(NUM[2*i], NUM[2*i+1]), str(i))
 
     def test_subtract(self):
-        Answ = [3, -12, 7, 1, -0.8599999999999999, -11.199000000000002, 13.21, -18.369999999999997, -3.43, 0, 4.7]
+        Answ = [3, -12, 7, 1, -0.8599999999999999, -11.199000000000002, 13.21, -18.369999999999997, 3.43, 0, 4.7]
         for i in range(0, 11):
             self.assertEqual(Answ[i], self.calc.subtract(NUM[2*i], NUM[2*i+1]), str(i))
 
     def test_multiply(self):
-        Answ = [18, -32, -12, 56, 9.612, 30.009960000000003, -42.4704, 162.597, -0, 0, 0]
+        Answ = [18, -32, -12, 56, 9.612, -30.009960000000003, -42.4704, 162.597, -0, 0, 0]
         for i in range(0, 11):
             self.assertEqual(Answ[i], self.calc.multiply(NUM[2*i], NUM[2*i+1]), str(i))
 
