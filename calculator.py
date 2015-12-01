@@ -17,7 +17,7 @@ class Calculator:
     def divide(self, x, y):
         """This function divides two numbers"""
         if y == 0:
-            raise ZeroDivisionError('Нельзя делить на 0')
+            raise ZeroDivisionError('Zero division')
         return x/y
 
     def evaluate(self, expression):
