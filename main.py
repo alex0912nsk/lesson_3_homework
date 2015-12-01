@@ -1,5 +1,3 @@
-from Tools.scripts.treesync import raw_input
-
 from calculator import Calculator
 calc = Calculator()
 while True:
