@@ -9,7 +9,7 @@
 - Автоматический запуск тестов на [Travic CI](https://travis-ci.org/)
 - В `README.md` [бейдж](http://docs.travis-ci.com/user/status-images/) статуса сборки проекта
 - 
-            https://travis-ci.org/alex0912nsk/lesson_3_homework.svg
+            https://travis-ci.org/alex0912nsk/lesson_3_homework.svg?branch=programming
 
 ## Примечание
 - Для написания unit-тестов достаточно [python unittest module](https://docs.python.org/3/library/unittest.html)
