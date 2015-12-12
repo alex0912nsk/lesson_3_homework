@@ -9,7 +9,7 @@ class CalculatorTest(TestCase):
 
     @data_provider(
         lambda: ((6, 3, 9), (-8, 4, -4), (4, -3, 1), (-7, -8, -15), (2.7, 3.56, 6.26), (-4.44, 6.759, 2.319),
-                            (5.53, -7.68, -2.15), (-24.9, -6.53, -31.43), (0, -3.43, -3.43), (0, 0, 0), (4.7, 0, 4.7)))
+                 (5.53, -7.68, -2.15), (-24.9, -6.53, -31.43), (0, -3.43, -3.43), (0, 0, 0), (4.7, 0, 4.7)))
     def test_add(self, a, b, ans):
         self.assertAlmostEqual(ans,  self.calc.add(a, b), 3)
 
@@ -30,6 +30,9 @@ class CalculatorTest(TestCase):
                  (5.53, -7.68, -0.72), (-24.9, -6.53, 3.813), (0, -3.43, -0)))
     def test_divide(self, a, b, ans):
         self.assertAlmostEqual(ans, self.calc.divide(a, b), 3)
-        with self.assertRaises(ZeroDivisionError):
-            self.calc.divide(4.7, 0)
+        self.assertRaises(ZeroDivisionError, lambda: self.calc.divide(4.7, 0))
 
+    def test_evaluate(self):
+        self.assertEqual(-6, self.calc.evaluate("3+(4-7)*3"))
+        self.assertEqual(17, self.calc.evaluate("2.5*3.2+(4.7-3.2)*6"))
+        self.assertRaises(ZeroDivisionError, lambda:  self.calc.evaluate("2/0"))
