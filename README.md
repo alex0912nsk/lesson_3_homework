@@ -7,9 +7,8 @@
 - Python 3.x
 - Колбасить код не в ветке `master`
 - Автоматический запуск тестов на [Travic CI](https://travis-ci.org/)
-- В `README.md` [бейдж](http://docs.travis-ci.com/user/status-images/) статуса сборки проекта
-- 
-            https://travis-ci.org/alex0912nsk/lesson_3_homework.svg?branch=programming
+- В `README.md` [бейдж](https://travis-ci.org/alex0912nsk/lesson_3_homework.svg) статуса сборки проекта
+
 
 ## Примечание
 - Для написания unit-тестов достаточно [python unittest module](https://docs.python.org/3/library/unittest.html)
