@@ -7,7 +7,7 @@
 - Python 3.x
 - Колбасить код не в ветке `master`
 - Автоматический запуск тестов на [Travic CI](https://travis-ci.org/)
-- В `README.md` [бейдж](https://travis-ci.org/alex0912nsk/lesson_3_homework.svg) статуса сборки проекта
+- В `README.md` [бейдж](https://travis-ci.org/alex0912nsk/lesson_3_homework.svg?branch=) статуса сборки проекта
 
 
 ## Примечание
