@@ -4,27 +4,48 @@ class Calculator:
 
     def add(self, x, y):
         """This function adds two numbers"""
-        
-        return x+y
+
+        try:
+            float(x)
+            float(y)
+            return x+y
+        except ValueError:
+            return None
 
     def subtract(self, x, y):
         """This function subtracts two numbers"""
-        
-        return x-y
+
+        try:
+            float(x)
+            float(y)
+            return x-y
+        except ValueError:
+            return None
 
     def multiply(self, x, y):
         """This function multiplies two numbers"""
-        
-        return x*y
+
+        try:
+            float(x)
+            float(y)
+            return x*y
+        except ValueError:
+            return None
 
     def divide(self, x, y):
         """This function divides two numbers"""
-        
-        if y == 0:
-            raise ZeroDivisionError('Нельзя делить на 0')
-        return x/y
+
+        try:
+            float(x)
+            float(y)
+            if y == 0:
+                raise ZeroDivisionError('Нельзя делить на 0')
+            return x/y
+        except ValueError:
+            return None
 
     def evaluate(self, expression):
         """This function evaluate expression"""
-        
+
         return eval(expression)
+
