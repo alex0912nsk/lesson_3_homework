@@ -14,10 +14,20 @@ class CalculatorTest(TestCase):
         self.assertAlmostEqual(ans,  self.calc.add(a, b), 3)
 
     @data_provider(
+        lambda: (('a', 3, None), (3, 'a', None), ('a', 'a', None)))
+    def test_add_wrong(self, a, b, ans):
+        self.assertEqual(ans,  self.calc.add(a, b))
+
+    @data_provider(
         lambda: ((6, 3, 3), (-8, 4, -12), (4, -3, 7), (-7, -8, 1), (2.7, 3.56, -0.86), (-4.44, 6.759, -11.199),
                  (5.53, -7.68, 13.21), (-24.9, -6.53, -18.37), (0, -3.43, 3.43), (0, 0, 0), (4.7, 0, 4.7)))
     def test_subtract(self, a, b, ans):
         self.assertAlmostEqual(ans, self.calc.subtract(a, b), 3)
+
+    @data_provider(
+        lambda: (('a', 3, None), (3, 'a', None), ('a', 'a', None)))
+    def test_substract_wrong(self, a, b, ans):
+        self.assertEqual(ans,  self.calc.subtract(a, b))
 
     @data_provider(
         lambda: ((6, 3, 18), (-8, 4, -32), (4, -3, -12), (-7, -8, 56), (2.7, 3.56, 9.612), (-4.44, 6.759, -30.01),
@@ -26,11 +36,21 @@ class CalculatorTest(TestCase):
         self.assertAlmostEqual(ans, self.calc.multiply(a, b), 3)
 
     @data_provider(
+        lambda: (('a', 3, None), (3, 'a', None), ('a', 'a', None)))
+    def test_multiply_wrong(self, a, b, ans):
+        self.assertEqual(ans,  self.calc.multiply(a, b))
+
+    @data_provider(
         lambda: ((6, 3, 2), (-8, 4, -2), (4, -3, -1.333), (-7, -8, 0.875), (2.7, 3.56, 0.758), (-4.44, 6.759, -0.657),
                  (5.53, -7.68, -0.72), (-24.9, -6.53, 3.813), (0, -3.43, -0)))
     def test_divide(self, a, b, ans):
         self.assertAlmostEqual(ans, self.calc.divide(a, b), 3)
         self.assertRaises(ZeroDivisionError, lambda: self.calc.divide(4.7, 0))
+
+    @data_provider(
+        lambda: (('a', 3, None), (3, 'a', None), ('a', 'a', None)))
+    def test_divide_wrong(self, a, b, ans):
+        self.assertEqual(ans,  self.calc.divide(a, b))
 
     def test_evaluate(self):
         self.assertEqual(-6, self.calc.evaluate("3+(4-7)*3"))
